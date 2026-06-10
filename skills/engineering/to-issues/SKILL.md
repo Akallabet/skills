@@ -55,11 +55,9 @@ For each approved slice, publish a new issue to the issue tracker. Use the issue
 
 Publish issues in dependency order (blockers first) so you can reference real issue identifiers in the "Blocked by" field.
 
+**Parent linking.** If the source material is an existing issue (e.g. a PRD on the tracker), link each child to it via the tracker's native parent-relation property — NOT via a Markdown link in the body. On the Notion tracker, that means setting the `Parent` property on the child page to the parent's page URL when creating it (see `docs/agents/issue-tracker.md` → "Set parent" for the exact shape). Other trackers have their own equivalents (GitHub: `Parent issue` / sub-issues; Linear: `parentId`; GitLab: linked epic). The body should NOT carry a redundant "## Parent" section when the property is set.
+
 <issue-template>
-## Parent
-
-A reference to the parent issue on the issue tracker (if the source was an existing issue, otherwise omit this section).
-
 ## What to build
 
 A concise description of this vertical slice. Describe the end-to-end behavior, not layer-by-layer implementation.
